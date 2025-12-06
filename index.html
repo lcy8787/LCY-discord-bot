@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCY Discord Bot - 條款與政策</title>
+    <title>LCY Bot - 法律資訊中心</title>
     <style>
         :root {
             --bg-color: #2c2f33;
             --nav-bg: #23272a;
             --text-color: #ffffff;
-            --link-color: #00b0f4; /* 調整為更亮的藍色以符合連結習慣 */
+            --text-muted: #b9bbbe;
+            --link-color: #00b0f4;
             --accent-color: #5865F2;
-            --container-width: 800px;
-            --card-bg: #23272a;
+            --card-bg: #2f3136;
+            --container-width: 850px;
         }
 
         body {
-            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -30,8 +31,8 @@
             padding: 1rem;
             position: sticky;
             top: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 1000;
         }
 
         .nav-container {
@@ -40,246 +41,252 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
-        .nav-title {
-            font-weight: bold;
-            font-size: 1.2rem;
+        .nav-brand {
+            font-weight: 800;
+            font-size: 1.3rem;
             color: white;
-            cursor: default;
+            letter-spacing: 1px;
         }
 
         .nav-links a {
-            color: #b9bbbe;
+            color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
+            font-weight: 500;
             transition: color 0.2s;
-            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
             color: #fff;
         }
 
-        /* 主要內容容器 */
+        /* 主要容器 */
         .container {
             max-width: var(--container-width);
-            margin: 3rem auto;
+            margin: 4rem auto;
             padding: 0 20px;
         }
 
-        /* 頁面標題 */
+        /* 標題區域 */
         header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #40444b;
+            margin-bottom: 4rem;
         }
 
         header h1 {
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: -webkit-linear-gradient(45deg, #5865F2, #00b0f4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header p {
-            color: #b9bbbe;
+            color: var(--text-muted);
             font-size: 1.1rem;
         }
 
-        /* 條款區塊卡片 */
+        /* 條款卡片樣式 */
         section {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            border-left: 5px solid var(--accent-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 1px solid #202225;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* 標題樣式 */
+        section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--accent-color);
+        }
+
         h2 {
             margin-top: 0;
+            font-size: 2rem;
             border-bottom: 2px solid #40444b;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
             color: #fff;
-            font-size: 1.8rem;
         }
 
         h3 {
             color: #fff;
             margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
         }
 
-        /* 文字與列表樣式 */
+        h3::before {
+            content: '#';
+            color: var(--accent-color);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
         p {
-            color: #dcddde;
+            color: var(--text-muted);
             margin-bottom: 1rem;
+            text-align: justify;
         }
 
         ul {
-            padding-left: 25px;
-            margin-bottom: 1rem;
+            color: var(--text-muted);
+            padding-left: 20px;
         }
 
         li {
-            color: #dcddde;
             margin-bottom: 8px;
         }
 
-        /* 連結樣式 */
         a {
             color: var(--link-color);
             text-decoration: none;
+            font-weight: 500;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        /* 引用區塊 (Blockquote) */
-        blockquote {
-            margin: 1rem 0;
-            padding-left: 1rem;
-            border-left: 4px solid #4f545c;
-            color: #a3a6aa;
-            font-style: italic;
+        /* 警示框 */
+        .disclaimer-box {
+            background-color: rgba(237, 66, 69, 0.1);
+            border: 1px solid #ed4245;
+            padding: 15px;
+            border-radius: 6px;
+            color: #ffb4b5;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            line-height: 1.6;
         }
 
-        /* 頁尾 */
-        footer {
-            text-align: center;
-            padding: 2rem;
+        .update-date {
             font-size: 0.85rem;
             color: #72767d;
+            font-style: italic;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #72767d;
+            font-size: 0.9rem;
             border-top: 1px solid #2f3136;
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- 導覽列 -->
     <nav>
         <div class="nav-container">
-            <span class="nav-title">LCY Bot 文件</span>
+            <span class="nav-brand">LCY Bot</span>
             <div class="nav-links">
-                <a href="#tos">服務條款 (ToS)</a>
-                <a href="#privacy">隱私政策 (Privacy)</a>
+                <a href="#tos">服務條款</a>
+                <a href="#privacy">隱私政策</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <!-- 簡介區域 -->
         <header>
-            <h1>LCY Discord Bot 相關文件</h1>
-            <p>本頁面詳列了 LCY Bot 的服務條款與隱私權政策。<br>請使用者在使用本機器人服務前詳閱以下內容。</p>
+            <h1>法律資訊中心</h1>
+            <p>在使用 LCY Bot 服務前，請詳細閱讀以下條款與政策。</p>
         </header>
 
-        <!-- 服務條款區域 (ToS) -->
+        <!-- 服務條款 (ToS) -->
         <section id="tos">
-            <h2>LCY-discord-bot 服務條款</h2>
-            <blockquote>最後更新: 2022年10月19日</blockquote>
-            
-            <p>透過使用「LCY 機器人」（以下簡稱本服務），您即同意並遵守本服務的使用條款，同時，您也應遵守「Discord」（以下簡稱該平台）上的 <a href="https://discord.com/terms" target="_blank">使用條款</a>。</p>
-            <p>我們的條款旨在為所有使用者保持一個熱情和安全的環境，所以請您熟讀本條款之內容，避免自身權益的損失。</p>
+            <h2>服務條款 (Terms of Service)</h2>
+            <span class="update-date">最後更新日期：2025年12月6日</span>
 
-            <h3>使用本服務</h3>
-            <p>透過使用本服務，任何您在如該平台發布、上傳、分享、儲存的文字、圖片等形式，須遵守該平台的使用條款，並符合法律之規範。</p>
-            <p>您同意不會通過服務發布、上傳、共享、存儲或以其他方式提供任何用戶提交的內容：</p>
-            <ul>
-                <li>侵犯任何第三方的版權或其他權利（例如商標、隱私權等）</li>
-                <li>包含色情內容</li>
-                <li>包含仇恨、誹謗或歧視性、煽動對任何個人或團體的仇恨之內容</li>
-                <li>剝削未成年人</li>
-                <li>描繪非法行為或極端暴力</li>
-                <li>描繪虐待動物或對動物的極端暴力行為</li>
-                <li>宣傳欺詐計劃、多層次營銷 (MLM) 計劃、快速致富計劃、在線遊戲和賭博、現金贈送、在家工作或任何其他可疑的賺錢企業</li>
-                <li>違反法律或是該平台之使用條款</li>
-                <li>若因發布以上內容而遭到本服務或該平台懲處或提告，包括警告、刪除玩家資料、刪除帳號等處分，皆屬於您自身的責任，所發布之內容皆不代表本服務之立場。</li>
-            </ul>
-            <p>我們保留任何追溯群組使用之狀況 (如創建邀請連結、查詢指令使用資料) 等權利，若您不希望被追蹤，可以關閉該平台提供之權限。</p>
+            <p>歡迎使用 LCY Bot（以下簡稱「本服務」或「機器人」）。透過邀請、啟動或使用本服務，即代表您同意受本服務條款（以下簡稱「條款」）的約束。如果您不同意這些條款，請勿使用本服務。</p>
 
-            <h3>公平使用</h3>
+            <h3>1. 使用許可與規範</h3>
+            <p>本服務授予您個人的、非獨占的、不可轉讓的有限許可，允許您在遵守 Discord 服務條款的前提下使用本機器人。您同意在使用本服務時<strong>不會</strong>從事以下行為：</p>
             <ul>
-                <li>使用本服務提供之任何功能時，您同意不使用任何腳本、自動點擊器、外掛等第三方程式，或是利用該功能之漏洞對服務造成不穩定或是任何破壞，我們保留對任何您使用的功能進行追溯的權力。</li>
+                <li>利用本服務進行任何違反當地法律、國際法律或 Discord 官方規定的活動。</li>
+                <li>試圖對機器人進行逆向工程、反編譯、攻擊或利用漏洞導致服務崩潰。</li>
+                <li>利用機器人發送垃圾訊息（Spam）、騷擾他人或傳播惡意軟體。</li>
+                <li>未經授權將本服務用於商業營利目的。</li>
             </ul>
 
-            <h3>行為期望</h3>
-            <p>我們鼓勵玩家在積極的環境中合作和競爭，但絕不會以不尊重或辱罵其他玩家的方式。</p>
-            <p>簡而言之：尊重所有玩家。制定這些規則的目的是為所有玩家營造一個溫馨和安全的環境。</p>
-            <p>檢舉玩家有助於我們的玩家提供更優質的遊戲體驗，可以到我們的 <a href="https://discord.gg/APuCyxKwsb" target="_blank">支援群組</a> 回報該使用者、伺服器的使用狀況。</p>
+            <h3>2. 服務可用性與數據風險</h3>
+            <p>本服務由開發者按「現狀（As-Is）」提供。我們致力於保持服務的穩定性與數據的完整性，但<strong>不保證</strong>：</p>
+            <ul>
+                <li>服務完全沒有錯誤或中斷。</li>
+                <li>服務將永久運作（開發者保留隨時終止服務的權利）。</li>
+                <li><strong>數據絕不遺失：</strong> 若發生不可抗力之因素（如資料庫故障、伺服器損毀），開發者不承擔復原數據之義務。建議您自行備份重要資料。</li>
+            </ul>
 
-            <h3>隱私權條款</h3>
-            <p>使用本服務即表示您已同意本服務之 <strong><a href="#privacy">隱私權條款</a></strong>。</p>
+            <h3>3. 與 Discord 的關係</h3>
+            <p>本服務是基於 Discord 平台開發的第三方應用程式。本服務與 Discord Inc. 無任何附屬、贊助或背書關係。您在使用本服務時，必須同時遵守 <a href="https://discord.com/terms" target="_blank">Discord 服務條款</a> 及 <a href="https://discord.com/guidelines" target="_blank">社群守則</a>。</p>
 
-            <h3>服務條款之修正</h3>
-            <p>本服務服務條款將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+            <h3>4. 免責聲明與責任限制</h3>
+            <div class="disclaimer-box">
+                在法律允許的最大範圍內，開發者不對因使用或無法使用本服務而導致的任何直接、間接、附帶、特殊或後果性損害（包括但不限於<strong>數據丟失</strong>、利潤損失）承擔責任。您需自行承擔使用本服務的風險。
+            </div>
+
+            <h3>5. 條款修改</h3>
+            <p>我們保留隨時更新本條款的權利。修改後的條款將公佈於本頁面，繼續使用本服務將視為您接受修改後的條款。</p>
         </section>
 
-        <!-- 隱私政策區域 (Privacy Policy) -->
+        <!-- 隱私政策 (Privacy Policy) -->
         <section id="privacy">
-            <h2>LCY-discord-bot 隱私權條款</h2>
-            <blockquote>最後更新: 2022年10月19日</blockquote>
-            
-            <p>非常歡迎您使用 「LCY 機械人」（以下簡稱本服務），為了讓您能夠安心的使用本服務的各項服務與資訊，特此向您說明本服務的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
+            <h2>隱私政策 (Privacy Policy)</h2>
+            <span class="update-date">最後更新日期：2025年12月6日</span>
 
-            <h3>隱私權保護政策的適用範圍</h3>
+            <p>LCY Bot 尊重並保護您的隱私。本政策旨在說明我們如何收集、使用及處理您在 Discord 平台上與機器人互動時產生的數據。</p>
+
+            <h3>1. 我們收集的資料</h3>
+            <p>為了提供完整的功能（如經濟系統、經驗值、音樂播放、審核記錄等），我們可能會處理以下類型的數據：</p>
             <ul>
-                <li>隱私權保護政策內容，包括本服務如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本服務以外的相關連結網站，也不適用於非本服務所委託或參與管理的人員。</li>
+                <li><strong>用戶識別碼 (User ID)：</strong> 用於綁定您的個人設定、庫存或等級資料。</li>
+                <li><strong>伺服器識別碼 (Guild ID)：</strong> 用於儲存特定伺服器的配置（如歡迎訊息設定）。</li>
+                <li><strong>指令互動數據：</strong> 當您觸發指令時，我們會處理指令內容以執行對應功能。</li>
+                <li><strong>暫時性訊息內容：</strong> 機器人僅在處理指令的當下讀取訊息。除 Log 功能經管理員開啟外，我們不會永久儲存您的聊天內容。</li>
             </ul>
 
-            <h3>個人資料的蒐集、處理及利用方式</h3>
+            <h3>2. 資料使用目的</h3>
+            <p>我們收集的數據僅用於：</p>
             <ul>
-                <li>當您造訪本服務或使用本服務所提供之功能服務時，我們將視該服務功能性質，請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您同意，本服務不會將個人資料用於其他用途。</li>
-                <li>本服務在您傳送訊息及使用本服務之功能時，會保留您的識別資料，用於確認身份之用途。</li>
-                <li>於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的IP位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們增進網站服務的參考依據，此記錄為內部應用，決不對外公佈。</li>
-                <li>為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。</li>
-                <li>您可以隨時向我們提出請求，以更正或刪除本服務所蒐集您錯誤或不完整的個人資料。</li>
+                <li>維持機器人的核心功能運作。</li>
+                <li>診斷技術問題與修復錯誤。</li>
+                <li>防止濫用與維護服務安全。</li>
             </ul>
+            <p><strong>我們絕不會將您的個人資料出售、出租或交易給任何第三方。</strong></p>
 
-            <h3>資料之保護</h3>
-            <ul>
-                <li>本服務主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及您的個人資料採用嚴格的保護措施，只由經過授權的人員才能接觸您的個人資料，相關處理人員皆簽有保密合約，如有違反保密義務者，將會受到相關的法律處分。</li>
-                <li>如因業務需要有必要委託其他單位提供服務時，本服務亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。</li>
-            </ul>
+            <h3>3. 資料儲存與安全</h3>
+            <p>您的數據存儲在受保護的資料庫環境中。我們會採取合理的安全措施來防止數據外洩。但請注意，我們不保證數據能「永久保存」且不會因技術性錯誤而遺失，同時我們也承諾不會在無正當理由下無限期保留非必要數據。</p>
 
-            <h3>網站對外的相關連結</h3>
+            <h3>4. 您的權利 (資料刪除)</h3>
+            <p>您擁有對自己數據的控制權。如果您希望刪除 LCY Bot 資料庫中所有關於您的記錄，請透過以下方式聯繫我們：</p>
             <ul>
-                <li>本服務的網頁提供其他網站的網路連結，您也可經由本服務所提供的連結，點選進入其他網站。但該連結網站不適用本服務的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</li>
+                <li>加入我們的 <a href="https://discord.gg/APuCyxKwsb" target="_blank">Discord 支援伺服器</a> 並開啟工單 (Ticket)。</li>
+                <li>或直接聯繫機器人開發者。</li>
             </ul>
+            <p>收到請求後，我們將在 30 天內刪除您的相關數據。</p>
 
-            <h3>與第三人共用個人資料之政策</h3>
-            <p>本服務絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。</p>
-            <p>前項但書之情形包括不限於：</p>
-            <ul>
-                <li>經由您書面同意。</li>
-                <li>法律明文規定。</li>
-                <li>為免除您生命、身體、自由或財產上之危險。</li>
-                <li>與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集者依其揭露方式無從識別特定之當事人。</li>
-                <li>當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。</li>
-                <li>有利於您的權益。</li>
-                <li>本服務委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。</li>
-            </ul>
-
-            <h3>Cookie之使用</h3>
-            <ul>
-                <li>為了提供您最佳的服務，本服務會在您的電腦中放置並取用我們的Cookie，若您不願接受Cookie的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Cookie的寫入，但可能會導致網站某些功能無法正常執行 。</li>
-            </ul>
-
-            <h3>隱私權保護政策之修正</h3>
-            <ul>
-                <li>本服務隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</li>
-            </ul>
+            <h3>5. 第三方服務</h3>
+            <p>本服務運作依賴於 Discord 的 API。Discord 可能會根據其 <a href="https://discord.com/privacy" target="_blank">隱私政策</a> 獨立收集您的數據，這不在本服務的控制範圍內。</p>
         </section>
     </div>
 
-    <!-- 頁尾 -->
     <footer>
         <p>&copy; 2025 LCY Bot. All rights reserved.</p>
-        <p>This bot is not affiliated with or endorsed by Discord Inc.</p>
+        <p>Not affiliated with Discord Inc.</p>
     </footer>
 
 </body>
